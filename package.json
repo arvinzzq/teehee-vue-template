@@ -1,0 +1,38 @@
+{
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "version": "{{ version }}",
+  "author": "{{ author }}",
+  "license": "{{ license }}",
+  "scripts": {
+    "dev": "node_modules/.bin/webpack-dev-server --mode development",
+    "build": "webpack -p --hide-modules",
+    "lib": "node_modules/.bin/babel src -d lib",
+    "test": "npm run lib",
+    "release": "npm run build && npm run lib && npm publish"
+  },
+  "keywords": [
+  {{#each keywords}}
+    "{{this}}"{{#if @last}}{{else}},{{/if}}
+  {{/each}}
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "node-sass": "^4.9.0",
+    "postcss-import": "^11.1.0",
+    "postcss-url": "^7.3.2",
+    "sass-loader": "^7.0.1",
+    "vue-loader": "^14.1.1",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}

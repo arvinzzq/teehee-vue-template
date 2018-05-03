@@ -5,11 +5,9 @@
   "author": "{{ author }}",
   "license": "{{ license }}",
   "scripts": {
-    "dev": "node_modules/.bin/webpack-dev-server --mode development",
-    "build": "webpack -p --hide-modules",
-    "lib": "node_modules/.bin/babel src -d lib",
-    "test": "npm run lib",
-    "release": "npm run build && npm run lib && npm publish"
+    "dev": "node_modules/.bin/webpack-dev-server -d --config config/webpack.dev.config.js",
+    "build": "node_modules/.bin/webpack -p --hide-modules --config config/webpack.prod.config.js",
+    "release": "npm run build && npm publish"
   },
   "keywords": [
   {{#each keywords}}
@@ -18,19 +16,16 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "node-sass": "^4.9.0",
-    "postcss-import": "^11.1.0",
-    "postcss-url": "^7.3.2",
-    "sass-loader": "^7.0.1",
-    "vue-loader": "^14.1.1",
-    "vue-template-compiler": "^2.5.16",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
+    "css-loader": "^0.28.7",
+    "vue-loader": "^13.5.0",
+    "vue-template-compiler": "^2.5.9",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.5",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "vue": "^2.5.16"

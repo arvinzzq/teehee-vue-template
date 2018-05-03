@@ -1,5 +1,5 @@
 <template>
-  <div>Hello App</div>
+  <div class="container">Hello App</div>
 </template>
 
 <script>
@@ -8,5 +8,8 @@
   };
 </script>
 
-<style lang="scss">
+<style>
+.container {
+  color: #e00;
+}
 </style>

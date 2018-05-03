@@ -1,2 +1,2 @@
-# bloom-react-template
-bloom template of react
+# bloom-vue-template
+bloom template of vue

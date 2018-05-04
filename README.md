@@ -1,2 +1,2 @@
-# bloom-vue-template
-bloom template of vue
+# teehee-vue-template
+teehee template of vue
